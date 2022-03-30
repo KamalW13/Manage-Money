@@ -1,29 +1,3 @@
-<?php
-
-include 'function.php';
-
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $tanggal = $_POST['tanggal'];
-    $catatan = $_POST['catatan'];
-    $nominal = $_POST['nominal-input'];
-
-    if(tambahPengeluaran($name, $tanggal, $catatan, $nominal) >= 1){
-        header("Location: index.php");
-    } else {
-        echo "<script> alert('Ada yang salah'); </script>";
-    }
-}
-
-$datas = query("SELECT nominal FROM data");
-$total = 0;
-
-for ($i=0; $i < count($datas); $i++) { 
-    $total += $datas[$i]['nominal'];
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
