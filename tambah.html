@@ -1,25 +1,3 @@
-<?php
-
-include 'function.php';
-
-if (isset($_POST['submit'])) {
-    var_dump($_POST);
-    exit;
-    $name = $_POST['name'];
-    $tanggal = $_POST['tanggal'];
-    $catatan = $_POST['catatan'];
-    $nominal = $_POST['nominal-input'];
-
-    if(tambahNominal($name, $tanggal, $catatan, $nominal) >= 1){
-        header("Location: index.php");
-    } else {
-        echo "<script> alert('Ada yang salah'); </script>";
-    }
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +46,7 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="button">
-                <a href="index.php">Kembali</a>
+                <a href="index.html">Kembali</a>
                 <button type="submit" name="submit">Submit</button>
             </div>
         </form>
